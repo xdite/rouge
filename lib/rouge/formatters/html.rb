@@ -46,9 +46,9 @@ module Rouge
 
     private
       def stream_untableized(tokens, &b)
-        yield "<pre#@css_class><code>" if @wrap
+        yield "<div#@css_class><pre>" if @wrap
         tokens.each{ |tok, val| span(tok, val, &b) }
-        yield "</code></pre>\n" if @wrap
+        yield "</pre></div>\n" if @wrap
       end
 
       def stream_tableized(tokens)
